@@ -82,7 +82,7 @@ class Seen(commands.Cog):
         member_seen_cache = self._cache.get(author.guild.id, {}).get(author.id, None)
 
         if not member_seen_cache and not member_seen_config:
-            embed = discord.Embed(colour=discord.Color.red(), title="I haven't seen that user yet.")
+            embed = discord.Embed(colour=3092790, title="<:pinkpantheress_denied:1071870003588120637> i haven't seen them!")
             return await ctx.send(embed=embed)
 
         if not member_seen_cache:
@@ -116,9 +116,9 @@ class Seen(commands.Cog):
                 ts += "{} minute ago".format(output[2])
             elif output[2] > 1:
                 ts += "{} minutes ago".format(output[2])
-        em = discord.Embed(colour=discord.Color.green())
+        em = discord.Embed(colour=3092790)
         avatar = author.avatar_url or author.default_avatar_url
-        em.set_author(name="{} was seen {}".format(author.display_name, ts), icon_url=avatar)
+        em.set_author(name="<:pinkpantheress_approved:1071870002271109161> ive seen {}! they was seen {}".format(author.display_name, ts), icon_url=avatar)
         await ctx.send(embed=em)
 
     @staticmethod
